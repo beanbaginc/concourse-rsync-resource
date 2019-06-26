@@ -33,7 +33,7 @@ SSH_ASKPASS=/opt/resource/askpass.sh DISPLAY= ssh-add ~/.ssh/server_key  1>&2  >
 echo $VERSION  1>&2
 
 REFS=''
-for DIR in `ssh -i ~/.ssh/server_key -p $PORT $USER@$SERVER 'mkdir -p $BASE_DIR && ls -1t $BASE_DIR'`; do
+for DIR in `ssh -i ~/.ssh/server_key -p $PORT $USER@$SERVER "mkdir -p $BASE_DIR && ls -1t $BASE_DIR"`; do
   echo $DIR 1>&2
   echo ${#REFS} 1>&2
 
